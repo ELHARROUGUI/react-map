@@ -26,12 +26,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Start the Project
 
-To start the project in a local environment just run:
-
+To start the project in a local environment after pulling it, it is necessary to:
+### Modify `MAP_API_KEY` in `src/shared/config.js` file with a valid API key
+Run
 ### `npm i`
-then
+Wait until the packages are installed. Then, run
 ### `npm start`
-And
+You can run also
 ### `npm test`
 For running some test cases
 
