@@ -1,34 +1,25 @@
-import React from 'react'
-import GoogleMapReact from 'google-map-react'
-import { Icon } from '@iconify/react'
-import locationIcon from '@iconify/icons-mdi/map-marker'
+import GoogleMapReact from "google-map-react";
+import Marker from "../Marker";
+import "./style.css";
 
-import './style.css'
-
-const LocationPin = ({ text }) => (
-    <div className="pin">
-      <Icon icon={locationIcon} className="pin-icon" />
-      <p className="pin-text">{text}</p>
+const Map = ({ payload, zoomLevel }) => {
+  console.log(`payload`, payload)
+  const {
+    geometry: { location },
+  } = payload;
+  return (
+    <div className="map" data-testid="googleMapReact">
+      <div className="google-map">
+        <GoogleMapReact
+          bootstrapURLKeys={{ key: "" }}
+          defaultCenter={location}
+          defaultZoom={zoomLevel}
+        >
+          <Marker payload={payload} />
+        </GoogleMapReact>
+      </div>
     </div>
   );
-
-const Map = ({ location, zoomLevel }) => (
-<div className="map">
-    <div className="google-map">
-      <GoogleMapReact
-        bootstrapURLKeys={{ key: '' }}
-        defaultCenter={location}
-        defaultZoom={zoomLevel}
-      >
-        <LocationPin
-          lat={location.lat}
-          lng={location.lng}
-          text={location.address}
-        />
-      </GoogleMapReact>
-    </div>
-  </div>
-);
-
+};
 
 export default Map;

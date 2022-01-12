@@ -1,0 +1,30 @@
+.pin {
+  display: flex;
+  align-items: center;
+  width: 600px;
+}
+
+.pin-icon {
+  font-size: 4rem;
+}
+
+.pin-text {
+  font-size: 1.1em;
+}
+
+.pin-detail {
+  text-align: left;
+  background-color: brown;
+  padding: 5%;
+  font-size: 1.1em;
+}
+
+@media screen and (min-width: 799px) {
+  .pin {
+    width: 10vw;
+  }
+
+  .pin-icon {
+    font-size: 10vw;
+  }
+}
